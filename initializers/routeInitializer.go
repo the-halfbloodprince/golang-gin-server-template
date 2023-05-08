@@ -3,15 +3,14 @@ package initializers
 import (
 	"server2/config"
 	"server2/models"
-	"server2/modules/app"
 )
 
 // InitializeRoutes initializes all the routes
 func InitializeRoutes() {
 
-	// MANUALLY ADD ROUTE GROUPS HERE
-	// app controllers
-	initializeRouteGroup(app.GetEndpoints())
+	for _, module := range Modules {
+		initializeRouteGroup(module.Prefix, module.Endpoints)
+	}
 }
 
 // initializeRouteGroup initializes a route group

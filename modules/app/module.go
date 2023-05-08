@@ -2,29 +2,26 @@ package app
 
 import "server2/models"
 
-// GetEndpoints returns all the endpoints for a group/module in the app
-func GetEndpoints() (string, []models.Endpoint) {
+var Module models.Module = models.Module{
+	Name:      "App",
+	Prefix:    "/",
+	Endpoints: Endpoints,
+}
 
-	prefix := "/"
-
-	Endpoints := []models.Endpoint{
-		{
-			Method:         "GET",
-			Path:           "/",
-			ControllerFunc: Home,
-		},
-		{
-			Method:         "GET",
-			Path:           "/about",
-			ControllerFunc: About,
-		},
-		{
-			Method:         "POST",
-			Path:           "/hi",
-			ControllerFunc: Hi,
-		},
-	}
-
-	return prefix, Endpoints
-
+var Endpoints = []models.Endpoint{
+	{
+		Method:         "GET",
+		Path:           "/",
+		ControllerFunc: Home,
+	},
+	{
+		Method:         "GET",
+		Path:           "/about",
+		ControllerFunc: About,
+	},
+	{
+		Method:         "POST",
+		Path:           "/hi",
+		ControllerFunc: Hi,
+	},
 }
