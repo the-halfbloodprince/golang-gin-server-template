@@ -1,4 +1,4 @@
-package initializers
+package config
 
 import (
 	"server2/models"

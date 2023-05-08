@@ -8,7 +8,7 @@ import (
 // InitializeRoutes initializes all the routes
 func InitializeRoutes() {
 
-	for _, module := range Modules {
+	for _, module := range config.Modules {
 		initializeRouteGroup(module.Prefix, module.Endpoints)
 	}
 }

@@ -10,5 +10,8 @@ this is a basic server template to start developing a golang server setup with G
 
 To create a new module:
 - Add a new directory corresponding to your module
-- Add it's prefix.
-- Wait I neeed to do some more abstractions
+- Add a new `module.go` file
+- Add a new Module struct with all the fields provided
+- Register it in the `config/modules.go` file
+- Put all the controllers and services in their own files
+- Done ✅
