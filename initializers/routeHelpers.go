@@ -1,4 +1,4 @@
-package helpers
+package initializers
 
 import (
 	"server2/config"

@@ -4,7 +4,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"html/template"
 	"server2/config"
-	"server2/helpers"
+	"server2/initializers"
 	"strings"
 )
 
@@ -29,7 +29,7 @@ func main() {
 	r.LoadHTMLGlob("templates/*.html")
 
 	// initialize routes
-	helpers.InitializeRoutes()
+	initializers.InitializeRoutes()
 
 	// start the app
 	_ = r.Run()
